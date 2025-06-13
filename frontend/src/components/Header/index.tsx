@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/userAuth";
 import { Button } from "../Button";
 
+
 interface HeaderProps {
   onSearchChange?: (value: string) => void; 
 }
@@ -14,7 +15,7 @@ export function Header({ onSearchChange }: HeaderProps) {
   return (
     <SHeader>
       <div><Link to="/">
-        <img src="/src/assets/logo.png" alt="Pet Fit Logo" />
+        <img src="/src/assets/logoRacao.png" alt="Pet Fit Logo" />
         </Link>
         <h1>Pet Fit</h1>
       </div>
