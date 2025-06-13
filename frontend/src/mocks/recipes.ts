@@ -11,7 +11,7 @@ export const recipes: IRecipe[] = [
   {
     id: 'muffin-salgado-para-cachorros',
     title: 'Muffin Salgado Para Cachorros',
-    imageUrl: '/src/assets/receita1.png',
+    imageUrl: '/assets/receita1.png',
     ingredients: [
       '½ lata de milho cozido.',
       '2 ovos.',
@@ -36,7 +36,7 @@ export const recipes: IRecipe[] = [
 {
     id: 'bolinhos-saudaveis-de-frango',
     title: 'Bolinhos saudáveis de Frango',
-    imageUrl: '/src/assets/receita2.png',
+    imageUrl: '/assets/receita2.png',
     ingredients: [
       '1/2 xícara de frango cozido e desfiado (sem sal ou temperos)',
       '2 colheres de sopa de cenoura ralada fina (crua ou cozida)',
@@ -57,7 +57,7 @@ export const recipes: IRecipe[] = [
   {
     id: 'bolinho-de-atum',
     title: 'Bolinho de Atum',
-    imageUrl: '/src/assets/receita3.png',
+    imageUrl: '/assets/receita3.png',
     ingredients: [
       '1 lata de atum conservado em água e sem sal',
       '1 xícara (de chá) de farinha de aveia',
@@ -78,7 +78,7 @@ export const recipes: IRecipe[] = [
 {
     id: 'pizza-para-cachorro',
     title: 'Pizza para cachorro',
-    imageUrl: '/src/assets/receita4.png',
+    imageUrl: '/assets/receita4.png',
     ingredients: [
       '1 copo de aveia',
       '½ xícara de caldo de galinha/carne',
