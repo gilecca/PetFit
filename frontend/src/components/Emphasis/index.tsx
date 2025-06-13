@@ -1,21 +1,16 @@
-
 import { HighLight } from "../HighLight";
 import { HighlightVideo } from "../HighlightVideo";
 import { EmphasisWrapper, SEmphasis } from "./styled";
-import { recipes } from "../../mocks/RecipesMock";
+import { recipes } from "../../mocks/recipes";
 
 interface EmphasisProps {
   searchTerm: string;
 }
 
 export function Emphasis({ searchTerm }: EmphasisProps) {
- 
   const filteredRecipes = recipes.filter((recipe) => {
     const lowerSearch = searchTerm.toLowerCase();
-    return (
-      recipe.title.toLowerCase().includes(lowerSearch) ||
-      recipe.category.toLowerCase().includes(lowerSearch)
-    );
+    return recipe.title.toLowerCase().includes(lowerSearch);
   });
 
   return (
@@ -24,12 +19,18 @@ export function Emphasis({ searchTerm }: EmphasisProps) {
 
       <SEmphasis>
         <h1>Destaques 🐾</h1>
+        
         {filteredRecipes.length > 0 ? (
-          filteredRecipes.map(({ id, href, title, src }) => (
-            <HighLight key={id} href={href} title={title} src={src} />
+          filteredRecipes.map(({ id, title, imageUrl }) => (
+            <HighLight
+              key={id}
+              id={id}
+              title={title}
+              src={imageUrl}
+            />
           ))
         ) : (
-          <p>Nenhuma receita encontrada.</p>
+          <p>Nenhuma receita encontrada com o termo "{searchTerm}".</p>
         )}
       </SEmphasis>
     </EmphasisWrapper>
