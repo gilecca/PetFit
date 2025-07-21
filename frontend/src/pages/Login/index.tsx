@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/userAuth";
 import { Button, Container, ErrorMessage, Form, FormGroup, Input, Label, RegisterLink, Title } from "./styles";
-import { Header } from "../../components/Header";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -30,8 +29,7 @@ export function Login() {
       setIsLoading(false)
     }
   }
-  return ( <>
-    <Header onSearchChange={() => {}} />
+  return (
     <Container>
       <Title>Login</Title>
 
@@ -63,6 +61,5 @@ export function Login() {
         Não tem uma conta? <Link to="/register">Registrar</Link>
       </RegisterLink>
     </Container>
-    </>
   )
 }
