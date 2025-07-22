@@ -125,7 +125,7 @@ const RecipePage: React.FC = () => {
               {recipe.ingredients}
             </ul>
 
-            <h3>Modo de preparo</h3>
+            <h3>Modo de Preparo</h3>
             <ol>
             {recipe.instructions}
             </ol>
