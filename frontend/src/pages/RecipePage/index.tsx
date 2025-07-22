@@ -85,9 +85,6 @@ const RecipePage: React.FC = () => {
     );
   }
 
-  // Trata os campos de ingredientes e instruções
-  const ingredients = parseDatabaseArray(recipe.ingredients);
-  const instructions = parseDatabaseArray(recipe.instructions);
 
   return (
     <>
