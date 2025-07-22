@@ -1,8 +1,13 @@
-import { defineConfig } from 'vitest/config';
+/// <reference types="vitest" />
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+  // Configuração para o build do Vite
   plugins: [react()],
+  base: '/', // Garante que os caminhos dos arquivos sejam relativos à raiz
+
+  // Sua configuração de testes do Vitest (está correta)
   test: {
     globals: true,
     environment: 'jsdom',
