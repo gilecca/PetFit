@@ -7,7 +7,7 @@ export function HighLight({ href, title }: { href: string, title: string}){
   <section>
     <a href={href}>
       <h3>{title}</h3>
-      <img src="src\assets\Gemini_Generated_Image_yxuo70yxuo70yxuo.png" alt={title}/>
+      <img src="public\assets\Gemini_Generated_Image_yxuo70yxuo70yxuo.png" alt={title}/>
     </a>
   </section>
    </SHighLight>
