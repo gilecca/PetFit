@@ -2,7 +2,7 @@ import { useState, type FormEvent } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../../contexts/AuthContext"
 import { Button, Container, ErrorMessage, Form, FormGroup, Input, Label, LoginLink, Title } from "./styles"
-import { Header } from "../../components/Header"
+
 
 export const RegisterPage = () => {
   const [name, setName] = useState("")
@@ -40,8 +40,6 @@ export const RegisterPage = () => {
 
   return (
     <>
-    
-        <Header onSearchChange={() => {}} />
       <Container>
         <Title>Registrar</Title>
 
@@ -92,4 +90,3 @@ export const RegisterPage = () => {
     </>
   )
 }
-
