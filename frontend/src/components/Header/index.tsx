@@ -42,9 +42,8 @@ export function Header({ onSearchChange }: HeaderProps) {
           {currentUser ? (
             <>
               <Link to="/receitas-salvas">Receitas Salvas</Link>
-              {currentUser.role === "admin" && (
-                <Link to="/admin/posts">Postagens</Link>
-              )}
+              <Link to="/recipes/create">Criar Receita</Link>
+              
               <Button type="button" onClick={logout}>
                 Sair
               </Button>
