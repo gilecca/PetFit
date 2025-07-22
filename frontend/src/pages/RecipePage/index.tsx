@@ -8,28 +8,7 @@ import { RecipeContext } from '../../contexts/RecipeContext';
 import RecipeService from '../../services/api/recipes';
 import { Button } from '../../components/Button'; 
 
-// Função corrigida para parsear array do banco corretamente
-const parseDatabaseArray = (field: unknown): string[] => {
-  if (Array.isArray(field)) {
-    return field;
-  }
 
-  if (typeof field === "string") {
-    const cleaned = field
-      .replace(/^{|}$/g, '')  // Remove { e }
-      .replace(/^"|"$/g, '')  // Remove aspas externas
-
-    // Verifica se tem vírgulas (array real), ou espaços (caso atual)
-    const separator = cleaned.includes(',') ? ',' : ' ';
-
-    return cleaned
-      .split(separator)
-      .map(item => item.trim())
-      .filter(item => item.length > 0);
-  }
-
-  return [];
-};
 
 
 const RecipePage: React.FC = () => {
