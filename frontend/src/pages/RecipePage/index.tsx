@@ -90,7 +90,7 @@ const RecipePage: React.FC = () => {
           <div>
             <h2>{recipe.title}</h2>
             <S.RecipeImage
-              src={'/src/assets/Gemini_Generated_Image_yxuo70yxuo70yxuo.png'}
+              src={"/assets/Gemini_Generated_Image_yxuo70yxuo70yxuo.png"}
               alt={`Imagem de ${recipe.title}`}
             />
           </div>

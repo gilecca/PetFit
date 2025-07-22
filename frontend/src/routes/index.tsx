@@ -17,7 +17,7 @@ export function RouteWeb() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
-        <Route path="recipe/:id" element={<RecipePage />} />
+        <Route path="recipe/:recipeId" element={<RecipePage />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<RegisterPage />} />
         

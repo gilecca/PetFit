@@ -79,8 +79,7 @@ export function SavedRecipes() {
             </>
           ) : (
             <>
-              <p>Olá, <strong>{currentUser?.name}</strong>!</p>
-              <Button onClick={() => setEditingName(true)}>Editar nome</Button>
+              
             </>
           )}
         </div>
