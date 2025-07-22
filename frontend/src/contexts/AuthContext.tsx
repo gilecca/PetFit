@@ -13,6 +13,7 @@ export interface AuthContextType {
   register: (name: string, email: string, password: string) => Promise<void>
   logout: () => void
   updateUserName: (newName: string) => Promise<void>
+  setUserName: (name: string) => void
 }
 
 // --- Criação do Contexto ---
@@ -23,6 +24,7 @@ export const AuthContext = createContext<AuthContextType>({
   register: async () => {},
   logout: () => {},
   updateUserName: async () => {},
+  setUserName: async () => {},
 })
 
 interface AuthProviderProps {
@@ -42,7 +44,18 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
     setIsLoading(false)
   }, [])
+  const setUserName = (name: string) => {
+    if (currentUser) {
+      // Cria um novo objeto de usuário com o nome atualizado
+      const updatedUser = { ...currentUser, name: name };
+      // Atualiza o estado local para que a UI mude instantaneamente
+      setCurrentUser(updatedUser);
 
+      // Opcional, mas recomendado:
+      // Aqui você também faria uma chamada à API para salvar
+      // o novo nome do usuário no banco de dados.
+    }
+  };
   // --- Função de Login ---
   const login = async (email: string, password: string) => {
     try {
@@ -110,6 +123,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         register,
         logout,
         updateUserName,
+        setUserName,
       }}
     >
       {children}

@@ -8,6 +8,8 @@ import { ProtectedRoute } from "./ProtectedRoute";
 import { SavedRecipes } from "../pages/SaveRecipe";
 
 import { Layout } from "../pages/Layout";
+import { AdminCreateRecipePage } from "../pages/CreatRecipe";
+import { AdminEditRecipePage } from "../pages/EditRecipe"
 
 
 export function RouteWeb() {
@@ -28,6 +30,22 @@ export function RouteWeb() {
             </ProtectedRoute>
           }
         />
+          <Route
+          path="/recipes/create"
+          element={
+            <ProtectedRoute>
+              <AdminCreateRecipePage />
+            </ProtectedRoute>
+          }/>
+         
+          <Route
+          path="/recipes/edit/:id"
+          element={
+            <ProtectedRoute>
+              <AdminEditRecipePage />
+            </ProtectedRoute>
+          }/>
+        
         
         {/* Rota protegida apenas para admin */}
         <Route
@@ -38,6 +56,7 @@ export function RouteWeb() {
             </ProtectedRoute>
           }
         />
+
 
         <Route path="*" element={<NotFoundPage />} />
       </Route>

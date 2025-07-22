@@ -27,7 +27,7 @@ export const SHighLight = styled.section`
   }
 
   img {
-    height: auto;
+    height: 30vh;
     width: 20vw;
     background-color: transparent;
     margin-top: 5%;

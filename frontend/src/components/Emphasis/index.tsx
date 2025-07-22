@@ -1,22 +1,27 @@
-
+import { useContext } from "react";
 import { HighLight } from "../HighLight";
 import { HighlightVideo } from "../HighlightVideo";
 import { EmphasisWrapper, SEmphasis } from "./styled";
-import { recipes } from "../../mocks/RecipesMock";
+import { RecipeContext } from "../../contexts/RecipeContext";
+
 
 interface EmphasisProps {
   searchTerm: string;
 }
 
 export function Emphasis({ searchTerm }: EmphasisProps) {
- 
-  const filteredRecipes = recipes.filter((recipe) => {
-    const lowerSearch = searchTerm.toLowerCase();
-    return (
-      recipe.title.toLowerCase().includes(lowerSearch) ||
-      recipe.category.toLowerCase().includes(lowerSearch)
-    );
-  });
+  // Acessa as receitas e o estado de carregamento do contexto
+  const { recipes, isLoading } = useContext(RecipeContext);
+
+  // Filtra as receitas do contexto com base no termo de busca
+  const filteredRecipes = recipes.filter((recipe) =>
+    recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Mostra uma mensagem de "carregando" enquanto os dados não chegam
+  if (isLoading) {
+    return <p>Carregando destaques...</p>;
+  }
 
   return (
     <EmphasisWrapper>
@@ -25,11 +30,15 @@ export function Emphasis({ searchTerm }: EmphasisProps) {
       <SEmphasis>
         <h1>Destaques 🐾</h1>
         {filteredRecipes.length > 0 ? (
-          filteredRecipes.map(({ id, href, title, src }) => (
-            <HighLight key={id} href={href} title={title} src={src} />
+          filteredRecipes.map((recipe) => (
+            <HighLight
+              key={recipe.id}
+              href={`/recipe/${recipe.id}`}
+              title={recipe.title}
+            />
           ))
         ) : (
-          <p>Nenhuma receita encontrada.</p>
+          <p>Nenhuma receita encontrada para "{searchTerm}".</p>
         )}
       </SEmphasis>
     </EmphasisWrapper>

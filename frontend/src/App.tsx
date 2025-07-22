@@ -2,11 +2,13 @@ import { Toaster } from 'react-hot-toast';
 import { GlobalStyle } from "./styles/GlobalStyle";
 import { RouteWeb } from "./routes";
 import { AuthProvider } from './contexts/AuthContext';
+import { RecipeProvider } from "./contexts/RecipeContext";
 
 export function App() {
   return (
     <AuthProvider>
       <GlobalStyle />
+      <RecipeProvider>
       <RouteWeb />
             <Toaster 
         position="top-right"
@@ -18,8 +20,10 @@ export function App() {
           },
         }}
       />
+      </RecipeProvider>
     </AuthProvider>
   );
 }
 
 export default App;
+

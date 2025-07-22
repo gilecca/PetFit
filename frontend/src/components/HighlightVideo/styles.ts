@@ -15,6 +15,8 @@ export const DestaqueSection = styled.div`
     padding-top: 1rem;
     justify-items: center;
     transition: transform 0.3s ease, filter 0.3s ease;
+    
+    
 
     &:hover {
       transform: scale(1.03);
@@ -33,6 +35,8 @@ export const DestaqueSection = styled.div`
     width: 25vw;
     background-color: transparent;
     margin-top: 5%;
+    margin-left: 2rem;
+
   }
 
   /* Responsividade */
